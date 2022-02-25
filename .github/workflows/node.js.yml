@@ -27,6 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install cypress
-    - run: npx cypress run --browser chrome
-    - run: npx cypress run --browser edge
-    - run: npx cypress run --browser firefox
+    - run: npx cypress run --browser chrome --config video=false
+    - run: npx cypress run --browser edge --config video=false
+    - run: npx cypress run --browser firefox --config video=false
