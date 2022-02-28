@@ -25,6 +25,6 @@ jobs:
         cache: 'npm'
     # Install chrome version
     - run: npm install cypress
-    - run: npx cypress run --browser chrome --config video=false
+    - run: npx cypress run --browser chrome:beta --config video=false
     - run: npx cypress run --browser edge --config video=false
     - run: npx cypress run --browser firefox --config video=false
