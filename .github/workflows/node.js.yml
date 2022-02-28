@@ -16,14 +16,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
-    uses: actions/setup-node@v2
+    - uses: actions/setup-node@v2
       with:
         node-version: '16'
         cache: 'npm'
     # Install chrome version
-    - uses: browser-actions/setup-chrome@latest
-      with:
-        chrome-version: beta
+    # - uses: browser-actions/setup-chrome@latest
+    #   with:
+    #     chrome-version: beta
     - run: chrome --version
     # - run: npm install cypress
     # - run: npx cypress run --browser chrome --config video=false
