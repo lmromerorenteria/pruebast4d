@@ -11,14 +11,14 @@ on:
 
 jobs:
     cypress-run:
-    runs-on: windows-latest
+      runs-on: windows-latest
 
-    steps:
-    # Install chrome beta
-    - uses: browser-actions/setup-chrome@latest
-      with:
-        chrome-version: beta
-    - uses: actions/checkout@v2
-    - uses: cypress-io/github-action@v2
-      with:
-        browser: chrome:beta
+      steps:
+      # Install chrome beta
+      - uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: beta
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          browser: chrome:beta
