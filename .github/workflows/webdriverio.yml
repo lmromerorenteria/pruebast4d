@@ -13,6 +13,8 @@ jobs:
           run: npm install
         - name: Enable safaridriver
           run: sudo safaridriver --enable
+        - name: run safaridriver
+          run: safarodriver -p 4444
         - name: Test
           run: npm run wdio
         - uses: actions/upload-artifact@v1
