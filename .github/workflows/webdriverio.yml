@@ -12,7 +12,7 @@ jobs:
         - name: Install
           run: npm install
         - name: Enable safaridriver
-          run: safaridriver --enable
+          run: sudo safaridriver --enable
         - name: Test
           run: npm run wdio
         - uses: actions/upload-artifact@v1
