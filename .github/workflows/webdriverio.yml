@@ -15,7 +15,7 @@ jobs:
           run: sudo safaridriver --enable
         - uses: browser-actions/setup-chrome@latest
           with:
-            chrome-version: dev
+            chrome-version: 913524
         - run: chrome --version
         - name: Test
           run: npm run wdio
