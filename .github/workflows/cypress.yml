@@ -22,3 +22,6 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome:beta
+
+          #https://www.lekoarts.de/garden/running-cypress-tests-with-github-actions-in-parallel
+#https://medium.com/geekculture/automatically-run-cypress-tests-on-every-code-push-with-github-action-and-docker-f6f305632fc5
