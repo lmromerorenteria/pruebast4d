@@ -18,7 +18,6 @@ describe('UE testing', () => {
     it('should change timeout duration for session with long code duration', async () => {
         // Execute code which takes a long time
         await browser.executeAsync((done) => {
-            console.log('Wake me up before you go!');
             setTimeout(done, 5900);
         });
     });
