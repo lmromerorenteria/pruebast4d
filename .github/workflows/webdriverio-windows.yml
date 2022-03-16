@@ -1,4 +1,4 @@
-name: CI
+name: Windows
 on: [push, pull_request]
 jobs:
   build:
@@ -8,11 +8,6 @@ jobs:
         - uses: browser-actions/setup-chrome@latest
         - name: Checkout
           uses: actions/checkout@v2
-      # Install chrome beta
-      # - name: Install chrome beta
-      # uses: browser-actions/setup-chrome@latest
-      # with:
-      #   chrome-version: beta
         - uses: actions/setup-node@v1
           with:
             node-version: 16.3.0

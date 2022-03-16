@@ -1,4 +1,4 @@
-name: CI
+name: mac
 on: [push, pull_request]
 jobs:
   build:
@@ -6,15 +6,10 @@ jobs:
     steps:
       # Install chrome beta
         - uses: browser-actions/setup-chrome@latest
-          with:
-            chrome-version: beta
+          # with:
+          #   chrome-version: beta
         - name: Checkout
           uses: actions/checkout@v2
-      # Install chrome beta
-      # - name: Install chrome beta
-      # uses: browser-actions/setup-chrome@latest
-      # with:
-      #   chrome-version: beta
         - uses: actions/setup-node@v1
           with:
             node-version: 16.3.0
