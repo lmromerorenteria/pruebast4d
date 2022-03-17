@@ -69,6 +69,12 @@ exports.config = {
 //     },
 // {
     browserName: 'safari',
+}, {
+    browserName: 'chromium',
+}, {
+    browserName: 'firefox',
+}, {
+    browserName: 'chrome',
 }],
     //
     // ===================
