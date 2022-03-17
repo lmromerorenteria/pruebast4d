@@ -71,6 +71,7 @@ exports.config = {
     browserName: 'safari',
 }, {
     browserName: 'chromium',
+    binary: '/Users/runner/hostedtoolcache/chromium/latest/x64/Chromium.app/Contents/MacOS/Chromium'
 }, {
     browserName: 'chrome',
 }],
