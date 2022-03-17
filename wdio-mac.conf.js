@@ -72,8 +72,6 @@ exports.config = {
 }, {
     browserName: 'chromium',
 }, {
-    browserName: 'firefox',
-}, {
     browserName: 'chrome',
 }],
     //
