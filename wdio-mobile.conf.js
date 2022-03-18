@@ -116,6 +116,8 @@ exports.config = {
                 platformVersion: "15.2",
                 deviceName: "iPhone 11",
                 browserName: 'chrome',
+                automationName: "XCUITest",
+                udid: "auto",
             }
         }]
     ],
