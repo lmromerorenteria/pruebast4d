@@ -70,7 +70,7 @@ exports.config = {
 // {
     browserName: 'safari',
 }, {
-    browserName: 'chrome',
+    browserName: 'chromium',
 }],
     //
     // ===================
