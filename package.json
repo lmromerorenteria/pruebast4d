@@ -17,6 +17,6 @@
     "scripts": {
         "wdio": "wdio run wdio.conf.js",
         "wdio-mac": "wdio run wdio-mac.conf.js",
-        "wdio-mobile": "wdio run wdio-mobile.conf.js"
+        "wdio-mobile": "appium & wdio run wdio-mobile.conf.js"
     }
 }
