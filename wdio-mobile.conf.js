@@ -62,6 +62,8 @@ exports.config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     }],
+
+    path: '/wd/hub/',
     //
     // ===================
     // Test Configurations
@@ -113,7 +115,7 @@ exports.config = {
         ['appium', {
             args: {
                 platformName: 'iOS',
-                platformVersion: "15.2",
+                platformVersion: "13.7",
                 deviceName: "iPhone 11",
                 browserName: 'chrome',
                 automationName: "XCUITest",
