@@ -18,7 +18,7 @@ jobs:
         - name: Enable safaridriver
           run: sudo safaridriver --enable
         - name: Test
-          run: npm run wdio-mac
+          run: npm run wdio-mobile
         - uses: actions/upload-artifact@v1
           if: failure()
           with:
