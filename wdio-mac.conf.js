@@ -1,3 +1,7 @@
+const drivers = {
+    chrome: { version: '100.0.4896.60' }, // https://chromedriver.chromium.org/
+}
+
 exports.config = {
     //
     // ====================
@@ -50,7 +54,7 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -61,17 +65,21 @@ exports.config = {
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
-//     },
-//     {
-//         browserName: 'chromium',
-//     }, {
-//         browserName: 'firefox',
-//     },
-// {
-    browserName: 'safari',
-}, {
-    browserName: 'chromium',
-}],
+        //     },
+        //     {
+        //         browserName: 'chromium',
+        //     }, {
+        //         browserName: 'firefox',
+        //     },
+        // {
+        browserName: 'safari',
+    }, {
+        browserName: 'chrome',
+        // "goog:chromeOptions": {
+        //     binary: "/Applications/Google Chrome Beta.app",
+        //     //   args: ['--log-file acaa.log']
+        // }
+    }],
     //
     // ===================
     // Test Configurations
@@ -119,8 +127,20 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone', 'safaridriver'],
-    
+    services: [
+        ['selenium-standalone', {
+            logPath: 'logs',
+            installArgs: { drivers }, // drivers to install
+            args: { drivers } // drivers to use
+        }],
+        'safaridriver',
+        // ['chromedriver',{
+        //     chromedriverCustomPath: '/Users/lucasromero/Downloads/chromedriver',
+        //     outputDir: 'driver-logs',
+        //     logFileName: 'wdio-chrome-driver.log',
+        // }]
+    ],
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -144,7 +164,7 @@ exports.config = {
     reporters: ['spec'],
 
 
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

@@ -115,12 +115,12 @@ exports.config = {
         ['appium', {
             args: {
                 platformName: 'iOS',
-                platformVersion: "13.7",
+                platformVersion: "15.0",
                 deviceName: "iPhone 11",
                 browserName: 'chrome',
                 automationName: "XCUITest",
             }
-        }]
+        }], 'chromedriver'
     ],
     
     // Framework you want to run your specs with.

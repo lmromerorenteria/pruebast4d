@@ -1,3 +1,7 @@
+const drivers = {
+    chrome: { version: '99.0.4844.51' }, // https://chromedriver.chromium.org/
+}
+
 exports.config = {
     //
     // ====================
@@ -50,7 +54,7 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -109,8 +113,16 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
-    
+    // services: ['selenium-standalone'],
+
+    services: [
+        ['selenium-standalone', {
+            logPath: 'logs',
+            installArgs: { drivers }, // drivers to install
+            args: { drivers } // drivers to use
+        }]
+    ],
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -134,7 +146,7 @@ exports.config = {
     reporters: ['spec'],
 
 
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
