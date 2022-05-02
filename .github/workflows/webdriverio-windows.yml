@@ -5,7 +5,7 @@ jobs:
     runs-on: windows-latest
     steps:
       # Install chrome beta
-        - uses: browser-actions/setup-chrome@latest
+        # - uses: browser-actions/setup-chrome@latest
         - name: Checkout
           uses: actions/checkout@v2
         - uses: actions/setup-node@v1

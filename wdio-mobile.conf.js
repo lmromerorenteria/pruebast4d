@@ -49,20 +49,23 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-    
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        // maxInstances: 5,
-        //
-        browserName: 'chrome',
-        // If outputDir is provided WebdriverIO can capture driver session logs
-        // it is possible to configure which logTypes to include/exclude.
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
-    }],
-
+    capabilities: [
+        {
+            // The defaults you need to have in your config
+            browserName: 'safari',
+            platformName: 'iOS',
+            maxInstances: 1,
+            // For W3C the appium capabilities need to have an extension prefix
+            // This is `appium:` for all Appium Capabilities which can be found here
+            // http://appium.io/docs/en/writing-running-appium/caps/
+            'appium:deviceName': 'iPhone 12',
+            'appium:platformVersion': '14.5',
+            'appium:orientation': 'PORTRAIT',
+            'appium:automationName': 'XCUITest',
+            'appium:newCommandTimeout': 240,
+        },
+    ],
+    port: 4723,
     path: '/wd/hub/',
     //
     // ===================
@@ -112,17 +115,22 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: [
-        ['appium', {
-            args: {
-                platformName: 'iOS',
-                platformVersion: "15.0",
-                deviceName: "iPhone 11",
-                browserName: 'chrome',
-                automationName: "XCUITest",
-            }
-        }], 'chromedriver'
+        [
+            'appium',
+            {
+                // This will use the globally installed version of Appium
+                command: 'appium',
+                args: {
+                    // This is needed to tell Appium that we can execute local ADB commands
+                    // and to automatically download the latest version of ChromeDriver
+                    relaxedSecurity: true,
+                    address: "localhost"
+                },
+            },
+
+        ],
     ],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -146,7 +154,7 @@ exports.config = {
     reporters: ['spec'],
 
 
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
