@@ -7,17 +7,12 @@ describe('UE testing', () => {
     })
 
 
-    it('should change timeout duration for session with long code duration', async () => {
+
+
+    it('should move the camara', async () => {
         // Execute code which takes a long time
-        await browser.executeAsync((done) => {
-            setTimeout(done, 5900);
-        });
+        await $('#streamingVideo').click();
+
     });
-
-    // it('should move the camara', async () => {
-    //     // Execute code which takes a long time
-    //     await $('#streamingVideo').click();
-
-    // });
 
 });

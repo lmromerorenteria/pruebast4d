@@ -1,4 +1,4 @@
-name: ios
+name: browserstack
 on: [push, pull_request]
 jobs:
   build:
