@@ -116,11 +116,13 @@ exports.config = {
     // services: ['selenium-standalone'],
 
     services: [
-        ['selenium-standalone', {
-            logPath: 'logs',
-            installArgs: { drivers }, // drivers to install
-            args: { drivers } // drivers to use
-        }]
+        ['selenium-standalone',
+            // {
+            //     logPath: 'logs',
+            //     installArgs: { drivers }, // drivers to install
+            //     args: { drivers } // drivers to use
+            // }
+        ]
     ],
 
     // Framework you want to run your specs with.

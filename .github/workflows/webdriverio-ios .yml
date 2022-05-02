@@ -17,8 +17,14 @@ jobs:
           run: npm install
         - name: Enable safaridriver
           run: sudo safaridriver --enable
-        - name: Test
-          run: npm -g install appium & npm install -g start-ios-simulator & start-ios-simulator & npm run ios.browser
+        - name: Install appium
+          run: sudo npm -g install appium 
+        - name: Install start-ios-simulator
+          run: sudo npm install -g start-ios-simulator
+        - name: start-ios-simulator
+          run: start-ios-simulator
+        - name: Run test
+          run: npm run ios.browser
         - uses: actions/upload-artifact@v1
           if: failure()
           with:
