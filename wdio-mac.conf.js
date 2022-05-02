@@ -129,11 +129,11 @@ exports.config = {
     // commands. Instead, they hook themselves up into the test process.
     services: [
         ['selenium-standalone',
-            //  {
-            //     logPath: 'logs',
-            //     installArgs: { drivers }, // drivers to install
-            //     args: { drivers } // drivers to use
-            // }
+            {
+                logPath: 'logs',
+                installArgs: { drivers }, // drivers to install
+                args: { drivers } // drivers to use
+            }
         ],
         'safaridriver',
         // ['chromedriver',{
